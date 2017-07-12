@@ -1,8 +1,4 @@
-// SEED //
-
-
 exports.seed = function(knex, Promise) {
-		// Deletes ALL existing entries
 		return knex('books').del()
         .then(() => {
 						return Promise.all([
