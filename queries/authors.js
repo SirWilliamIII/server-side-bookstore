@@ -1,7 +1,6 @@
 const knex = require('../knex');
 
 module.exports = {
-
 		getAllAuthors: () => {
 				return knex('authors')
 						.orderBy('id');
@@ -12,8 +11,8 @@ module.exports = {
 		},
 		addAuthor: author => {
 				const newAuthor = {
-						first:        author.title,
-						last:  author.last,
+						first: author.title,
+						last: author.last,
 						biography: author.biography,
 						portrait_url: author.portrait_url
 				}

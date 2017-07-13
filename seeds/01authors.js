@@ -1,4 +1,3 @@
-
 exports.seed = function(knex, Promise) {
 		// Deletes ALL existing entries
 		return knex('authors').del()
@@ -44,4 +43,3 @@ exports.seed = function(knex, Promise) {
 						]);
 				});
 };
-

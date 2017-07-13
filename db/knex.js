@@ -5,5 +5,3 @@ const knex = require('knex');
 const connection = knex(environmentConfig);
 
 module.exports = connection;
-
-//test comment
