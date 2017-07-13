@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const bookRoutes = require('../../queries/books');
+const bookRoutes = require('../db/queries/books');
 
-router.get('/books', (req, res) => {
+router.get('/books', (req, res, next) => {
 		bookRoutes.getAllBooks()
 				.then(data => {
 						res.json(data)
@@ -23,15 +23,7 @@ router.post('/books', (req, res, next) => {
 				})
 });
 
-router.get('/books/authors', function(req, res, next) {
-		book.getBooksWithAuthors().then(function (data) {
-				res.json(data);
-		}).catch(function (err) {
-				next(err);
-		})
-})
-
-router.delete('/books/:id', (req, res) => {
+router.delete('/books/:id', (req, res, next) => {
 		bookRoutes.deleteBookById(req.params.id)
 				.then(data => {
 						res.json(data);
@@ -39,6 +31,5 @@ router.delete('/books/:id', (req, res) => {
 						next(err);
 				})
 });
-
 
 module.exports = router;
