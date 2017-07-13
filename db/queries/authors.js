@@ -37,9 +37,10 @@ module.exports = {
 										})
 						})
 		},
-		getAuthorsHaveBook: () => {
+		getJoinAuthorId: () => {
 				return knex.table('authors')
 						.innerJoin('books', 'authors.id', '=', 'books.author_id')
 
 		}
 }
+
