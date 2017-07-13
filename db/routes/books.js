@@ -23,13 +23,22 @@ router.post('/books', (req, res, next) => {
 				})
 });
 
+router.get('/books/authors', function(req, res, next) {
+		book.getBooksWithAuthors().then(function (data) {
+				res.json(data);
+		}).catch(function (err) {
+				next(err);
+		})
+})
+
 router.delete('/books/:id', (req, res) => {
-		bookRoutes.deleteBookByParamId(req.params.id)
+		bookRoutes.deleteBookById(req.params.id)
 				.then(data => {
 						res.json(data);
 				}).catch(err => {
 						next(err);
 				})
 });
+
 
 module.exports = router;

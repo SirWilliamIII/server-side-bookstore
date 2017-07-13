@@ -16,7 +16,7 @@ module.exports = {
 				return knex('books')
 						.orderBy('id');
 		},
-		deleteBookByParamId: id => {
+		deleteBookById: id => {
 				return knex('books')
 						.where('id', id).del();
 		}
